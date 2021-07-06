@@ -110,6 +110,11 @@ fi
 #source /Library/Frameworks/Python.framework/Versions/3.9/bin/virtualenvwrapper.sh
 #export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 bindkey ']' autosuggest-accept
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH:.
+export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+export M2_HOME=/Users/qiwang/local_qw/apache-maven-3.8.1
+export PATH="$M2_HOME/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 #export WORKON_HOME="$PYENV_ROOT/versions"
