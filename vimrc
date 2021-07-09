@@ -10,6 +10,8 @@ command! Jsonq :execute '%!python -m json.tool'
 
 
 set number
+set hls is 
+set ic
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
