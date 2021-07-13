@@ -19,7 +19,7 @@ execute pathogen#infect()
 syntax enable
 filetype plugin indent on
 
-let mapleader = "\<space>"
+let mapleader = "\\"
 
 let skip_defaults_vim=1
 
@@ -88,7 +88,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1  " 支持 powerline 字体
 let g:airline#extensions#tabline#enabled = 1 " 显示窗口tab和buffer
-let g:airline_theme='molokai'  " murmur配色不错
+let g:airline_theme='moloai'  " murmur配色不错
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
@@ -123,22 +123,11 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-if has('nvim')
-    let s:cachedir = expand(stdpath('cache'))
-    let s:configdir = expand(stdpath('config'))
-else
-    "vim will share same folder with nvim
-    if has('win32')
-        let s:cachedir = expand('~/AppData/Local/Temp/cache/nvim')
-        let s:configdir = expand('~/AppData/Local/nvim')
-    else
-        let s:cachedir = expand('~/.cache/nvim')
-        let s:configdir = expand('~/.config/nvim')
-    endif
-endif
+let s:cachedir = expand('~/.cache/nvim')
+let s:configdir = expand('~/.config/nvim')
 "let g:Lf_Ctags="uctags"
 let g:Lf_WorkingDirectoryMode = 'AF'
-let g:Lf_RootMarkers = ['.git', '.svn', '.hg', '.project', '.root', '.xml', '.py']
+let g:Lf_RootMarkers = ['.git', '.svn', '.hg', '.project', '.root', '.xml', '.py','.java']
 let g:Lf_UseVersionControlTool=1 "default value, can ignore
 let g:Lf_DefaultExternalTool='rg'
 let g:Lf_PreviewInPopup = 1
