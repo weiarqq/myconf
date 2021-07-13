@@ -1,6 +1,5 @@
-
 set modelines=0		" CVE-2007-2438
-
+set guifont=DroidSansMono_Nerd_Font:h11
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
@@ -44,14 +43,25 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'jiangmiao/auto-pairs'
   Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  Plug 'nvie/vim-flake8'
+  Plug 'Yggdroot/indentLine'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'VundleVim/YouCompleteMe'
+  Plugin 'ryanoasis/vim-devicons'
+  Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+call vundle#end()
+filetype plugin indent on
 
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
 let NERDTreeWinSize=31
 let g:nerdtree_tabs_open_on_console_startup=1
-let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+let NERDTreeIgnore=['\.pyc','\~$','\.swp', '__pycache__']
 let NERDTreeShowBookmarks=0
 map <Leader>t <plug>NERDTreeTabsToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -187,5 +197,11 @@ noremap <leader>fgo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
 noremap <leader>fgn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
 noremap <leader>fgp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
 
-
-"this is a test
+map <F10> :call PRUN()<CR>
+func! PRUN()
+    exec "w" 
+    if &filetype == 'python'
+        exec "!python %"
+    endif
+endfunc
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
