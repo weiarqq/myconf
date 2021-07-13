@@ -1,5 +1,6 @@
 set modelines=0		" CVE-2007-2438
 set guifont=DroidSansMono_Nerd_Font:h11
+set nowrap
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
@@ -64,7 +65,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp', '__pycache__']
 let NERDTreeShowBookmarks=0
 map <Leader>t <plug>NERDTreeTabsToggle<CR>
-nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>x :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
