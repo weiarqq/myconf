@@ -101,27 +101,34 @@ source /usr/local/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highligh
 if brew list --formula|grep coreutils > /dev/null;then
  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH" 
  alias ls='ls -F --show-control-chars --color=auto' 
- eval `gdircolors -b $HOME/myconf/.dir_colors` 
+ #eval `gdircolors -b $HOME/myconf/.dir_colors` 
 fi
 
-#export WORKON_HOME=$HOME/pyEnv
-#export VIRTUALENVWRAPPER_SCRIPT=/Library/Frameworks/Python.framework/Versions/3.9/bin/virtualenvwrapper.sh
-#export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/3.9/bin/python3
-#source /Library/Frameworks/Python.framework/Versions/3.9/bin/virtualenvwrapper.sh
-#export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 bindkey ']' autosuggest-accept
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH:.
 export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
 export M2_HOME=/Users/qiwang/local_qw/apache-maven-3.8.1
 export PATH="$M2_HOME/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-#export WORKON_HOME="$PYENV_ROOT/versions"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-eval "$(pyenv init --path)"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-eval "$(pyenv virtualenv-init -)"
 export PATH="/usr/local/bin:$PATH"
+
+export PYSPARK_PYTHON="/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5"
+export PYSPARK_DRIVER_PYTHON="/Library/Frameworks/Python.framework/Versions/3.5/bin/ipython3"
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+alias pysbook='$SPARK_PATH/bin/pyspark'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/wangqi/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/wangqi/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/wangqi/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/wangqi/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
