@@ -1,2 +1,1 @@
 # myconf
-vim config
