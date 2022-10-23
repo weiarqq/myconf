@@ -65,11 +65,11 @@ map <Leader>fw :Ack! <Space>
 " AckFile不打开第一个搜索文件
 map <Leader>ff :AckFile!<Space>
 " 定义快捷键 关闭当前分割窗口
-nmap <Leader>q :q<CR>
+" nmap <Leader>q :q<CR>
 " 定义快捷键
-nmap <Leader>w :w<CR>
+" nmap <Leader>w :w<CR>
 " 删除光标所在单词
-nmap e daw
+" nmap e daw
 " close TAB
 nmap tabc :tabc <CR>
 " go to previous table
@@ -80,9 +80,9 @@ nmap <Leader>gt g<C-]>
 " 定义快捷键 跳回原关键词 与 ;gr 配合使用
 nmap <Leader>gr <C-T>
 " 向下翻半屏
-nmap <Leader>u <C-U>
+" nmap <Leader>u <C-U>
 " 向上翻半屏
-nmap <Leader>d <C-D>
+" nmap <Leader>d <C-D>
 " 快速移动到行首，行尾
 map <Leader>1 ^
 map <Leader>2 $
@@ -439,7 +439,7 @@ endfunc
 
 "python 代码提示
 filetype plugin on
-let g:pydiction_location = '~/myconf/PowerVim/.vim/bundle/pydiction/complete-dict'
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height = 3
 
 
