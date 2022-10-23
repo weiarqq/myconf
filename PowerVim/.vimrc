@@ -436,3 +436,10 @@ function! GenMarkdownSectionNum()
   " echo lvl sect out
   echo out
 endfunc
+
+"python 代码提示
+filetype plugin on
+let g:pydiction_location = '~/myconf/PowerVim/.vim/bundle/pydiction/complete-dict'
+let g:pydiction_menu_height = 3
+
+
