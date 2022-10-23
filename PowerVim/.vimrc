@@ -129,6 +129,8 @@ nmap <Leader>t :Tab /
 nmap<leader>tg :!ctags -R --fields=+aS --extra=+q<CR>
 " java jdk 补全
 map! <C-O> <C-X><C-O>
+" 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
+autocmd VimEnter * NERDTree
 " 使用NERDTree插件查看工程文件。设置快捷键
 nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
 " 设置NERDTree子窗口位置
