@@ -71,77 +71,77 @@ map <Leader>ff :AckFile!<Space>
 " 删除光标所在单词
 " nmap e daw
 " close TAB
-nmap tabc :tabc <CR>
+" nmap tabc :tabc <CR>
 " go to previous table
-map gp :tabp <CR>
+" map gp :tabp <CR>
 " 定义快捷键 跳转到光标所在关键词的定义处
 " here are multiple matches, show me a list of all the matching tags 
-nmap <Leader>gt g<C-]>
+" nmap <Leader>gt g<C-]>
 " 定义快捷键 跳回原关键词 与 ;gr 配合使用
-nmap <Leader>gr <C-T>
+" nmap <Leader>gr <C-T>
 " 向下翻半屏
 " nmap <Leader>u <C-U>
 " 向上翻半屏
 " nmap <Leader>d <C-D>
 " 快速移动到行首，行尾
-map <Leader>1 ^
-map <Leader>2 $
+" map <Leader>1 ^
+" map <Leader>2 $
 " 补全提示
 ""nmap <Leader>p <C-P>
 " 快速切换C H源文件
-nmap <Leader>a :A<CR>
+" nmap <Leader>a :A<CR>
 
 "快速切换到上一个文件
 " nmap <Leader>j :bn<CR>
 " nmap <Leader>k :bp<CR>
 
 " 设置快捷键gs遍历各分割窗口。快捷键速记法：goto the next spilt window
-nnoremap <Leader>gg <C-W><C-W>
+" nnoremap <Leader>gg <C-W><C-W>
 
 " 向左
-nnoremap <leader>h <C-W><C-H>
+""nnoremap <leader>h <C-W><C-H>
 " 向右
-nnoremap <leader>l <C-W><C-L>
+""nnoremap <leader>l <C-W><C-L>
 " 向上
-nnoremap <Leader>k <C-W><C-K>
+""nnoremap <Leader>k <C-W><C-K>
 " 向下
-nnoremap <Leader>j <C-W><C-J>
+""nnoremap <Leader>j <C-W><C-J>
 " 去除高亮
 "nmap <Leader>h :noh<CR>
 " 打开文件
-nmap <Leader>e :e<Space>
+""nmap <Leader>e :e<Space>
 " 不关闭文件推出
-nmap <Leader>z <C-Z>
+" nmap <Leader>z <C-Z>
 " 水平分隔
-nmap <Leader>s :Sex<CR>
+""nmap <Leader>s :Sex<CR>
 " 竖直分隔
-nmap <Leader>v :Vex<CR>
+""nmap <Leader>v :Vex<CR>
 " 全局替换
-nmap <Leader>r :%s/fileName-/fileName+/g
+""nmap <Leader>r :%s/fileName-/fileName+/g
 " align 表格对齐
-nmap <Leader>t :Tab /
+""nmap <Leader>t :Tab /
 " 打tag
 " --c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
 "--fields=+iaS   : Adds inheritance (i), access (a) and function
 "                  signatures (S) information.
 "--extra=+q      : Adds context to the tag name. Note: Without this
 "                  option, the script cannot get class members.
-nmap<leader>tg :!ctags -R --fields=+aS --extra=+q<CR>
+""nmap<leader>tg :!ctags -R --fields=+aS --extra=+q<CR>
 " java jdk 补全
-map! <C-O> <C-X><C-O>
+""map! <C-O> <C-X><C-O>
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
-autocmd VimEnter * NERDTree
+""autocmd VimEnter * NERDTree
 " 使用NERDTree插件查看工程文件。设置快捷键
-nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
+""nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
 " 设置NERDTree子窗口位置
 let NERDTreeWinPos="left"
 " 设置忽略的文件
 let NERDTreeIgnore=['\.vim$', '\~$', '\.o$', '\.d$', '\.a$', '\.out$', '\.tgz$']
 
 " 使用TlistToggle查看文件函数列表。设置快捷键：<F12>
-nnoremap  <Leader>m  :TlistToggle <CR> 
+""nnoremap  <Leader>m  :TlistToggle <CR> 
 " 粘贴到系统剪切板
-map <Leader>y "*y
+""map <Leader>y "*y
 "禁止自动改变当前Vim窗口的大小
 let Tlist_Inc_Winwidth=0
 "把方法列表放在屏幕的右侧
@@ -251,8 +251,7 @@ func SetTitle()
     if &filetype == 'sh'
         call setline(1,"\#########################################################################")
         call append(line("."),   "\# File Name:    ".expand("%"))
-        call append(line(".")+1, "\# Author:       程序员Carl")
-        call append(line(".")+2, "\# mail:         programmercarl@163.com")
+        call append(line(".")+1, "\# Author:       Weah")
         call append(line(".")+3, "\# Created Time: ".strftime("%c"))
         call append(line(".")+4, "\#########################################################################")
         call append(line(".")+5, "\#!/bin/bash")
@@ -260,8 +259,7 @@ func SetTitle()
     else
         call setline(1, "/* ************************************************************************")
         call append(line("."),   "> File Name:     ".expand("%"))
-        call append(line(".")+1, "> Author:        程序员Carl")
-        call append(line(".")+2, "> 微信公众号:    代码随想录")
+        call append(line(".")+1, "> Author:        Weah")
         call append(line(".")+3, "> Created Time:  ".strftime("%c"))
         call append(line(".")+4, "> Description:   ")
         call append(line(".")+5, " ************************************************************************/")
@@ -444,4 +442,6 @@ filetype plugin on
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height = 3
 
-
+set backspace=2
+ command! Json :execute '%!python -m json.tool'
+  \ | :execute '%!python -c "import re,sys;sys.stdout.write(re.sub(r\"\\\u[0-9a-f]{4}\", lambda m:m.group().encode(\"utf-8\").decode(\"unicode_escape\"), sys.stdin.read()))"'
