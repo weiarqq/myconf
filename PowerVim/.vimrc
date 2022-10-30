@@ -132,7 +132,7 @@ map <Leader>ff :AckFile!<Space>
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
 ""autocmd VimEnter * NERDTree
 " 使用NERDTree插件查看工程文件。设置快捷键
-""nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
+nnoremap <silent> <Leader>t  :NERDTreeToggle <CR> 
 " 设置NERDTree子窗口位置
 let NERDTreeWinPos="left"
 " 设置忽略的文件
@@ -252,18 +252,18 @@ func SetTitle()
         call setline(1,"\#########################################################################")
         call append(line("."),   "\# File Name:    ".expand("%"))
         call append(line(".")+1, "\# Author:       Weah")
-        call append(line(".")+3, "\# Created Time: ".strftime("%c"))
-        call append(line(".")+4, "\#########################################################################")
-        call append(line(".")+5, "\#!/bin/bash")
-        call append(line(".")+6, "")
+        call append(line(".")+2, "\# Created Time: ".strftime("%c"))
+        call append(line(".")+3, "\#########################################################################")
+        call append(line(".")+4, "\#!/bin/bash")
+        call append(line(".")+5, "")
     else
         call setline(1, "/* ************************************************************************")
         call append(line("."),   "> File Name:     ".expand("%"))
         call append(line(".")+1, "> Author:        Weah")
-        call append(line(".")+3, "> Created Time:  ".strftime("%c"))
-        call append(line(".")+4, "> Description:   ")
-        call append(line(".")+5, " ************************************************************************/")
-        call append(line(".")+6, "")
+        call append(line(".")+2, "> Created Time:  ".strftime("%c"))
+        call append(line(".")+3, "> Description:   ")
+        call append(line(".")+4, " ************************************************************************/")
+        call append(line(".")+5, "")
     endif
     "新建文件后，自动定位到文件末尾
     autocmd BufNewFile * normal G
