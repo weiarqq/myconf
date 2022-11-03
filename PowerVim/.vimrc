@@ -112,7 +112,7 @@ nnoremap <Leader>j <C-W><C-J>
 " 打开文件
 ""nmap <Leader>e :e<Space>
 " 不关闭文件推出
-nmap <Leader>z <C-Z>
+nmap <Leader>s <C-Z>
 " 水平分隔
 ""nmap <Leader>s :Sex<CR>
 " 竖直分隔
